@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	/* background: url(evoLootion_background.jpg); */
+}
+
+#page{
+	width: 800px;
+	margin: 20px auto;
+}
+#logo{
+	z-index: -1;
+	position: relative;
+}
+
+#paper{
+	background-image: url(../img/brown-grunge.jpg);
+	position: relative;
+	/* cursor:url(zahnrad_22x22.cur), auto; */
+}
+
+#score{
+	position: absolute;
+	font-weight: bold;
+	bottom: 20px;
+	right: 20px;
+	color: rgb(191, 191, 191);
+}
+
+#timer{
+	position: absolute;
+	font-weight: bold;
+	top: 20px;
+	right: 20px;
+	color: rgb(191, 191, 191);
+}
