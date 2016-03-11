@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+	width: 800px;
+	margin: 20px auto;
+}
+#logo{
+	z-index: -1;
+	position: relative;
+}
+
+#stage{
+	height: 740px;
+	background-color: #ccddee;
+	position: relative;
+}
+
+#score{
+	position: absolute;
+	font-weight: bold;
+	bottom: 20px;
+	right: 20px;
+	color: rgb(191, 191, 191);
+}
+
+#timer{
+	position: absolute;
+	font-weight: bold;
+	top: 20px;
+	right: 20px;
+	color: rgb(191, 191, 191);
+}
