@@ -9,21 +9,21 @@ var Snake = (function() {
         this.posY = ($('#stage').height() / 2);
 		this.radius	= radius;
 		this.bodyParts = number_of_bodies;
-		this.body = this.assemble_body();
+		this.body = this.assembleBody();
 		//this.head_posX = this.snakeHead.attr('cx');
 		//this.head_posY	= this.snakeHead.attr('cy');
 }
 
-    Snake.prototype.assemble_body = function() {
+    Snake.prototype.assembleBody = function() {
         var complete_body = stage.set();
-        complete_body.push(this.draw_head_part());
+        complete_body.push(this.drawHeadPart());
         for (var i = 0; i < this.bodyParts; i++) {
-            complete_body.push(this.draw_body_part())
+            complete_body.push(this.drawBodyPart())
         }
         return complete_body;
     };
 
-	Snake.prototype.draw_head_part = function(){
+	Snake.prototype.drawHeadPart = function(){
 		var head = stage.circle(
             this.posX,
             this.posY,
@@ -36,7 +36,7 @@ var Snake = (function() {
         return head;
 	};
 
-    Snake.prototype.draw_body_part = function(){
+    Snake.prototype.drawBodyPart = function(){
         var body = stage.circle(
             this.body.items[this.body.items.length-1].attr('cx'),
             this.body.items[this.body.items.length-1].attr('cx'),
@@ -49,8 +49,8 @@ var Snake = (function() {
         return body;
 	};
 
-    Snake.prototype.add_bodypart = function(){
-        this.body.items.push(this.draw_body_part());
+    Snake.prototype.addBodyPart = function(){
+        this.body.items.push(this.drawBodyPart());
         return this.body
 	};
 
@@ -71,7 +71,6 @@ var Snake = (function() {
         }
         else {
             for (var i = 0, j = this.body.items.length; i < j; i++) {
-                // head move to mouse WITH FIXED SPEED!!!
                 if (i == 0) {
                     var posHead = {
                         x: headX + newX,
@@ -80,10 +79,8 @@ var Snake = (function() {
                         cy: headY + newY
                     };
 
-                    this.body.items[i].animate(posHead)
-                }
-                // body follow previous body WITH DISTANCE!!!
-                else {
+                    this.body.items[i].stop().animate(posHead)
+                } else {
                     var previousPart = this.body.items[i-1];
 
                     var posBody = {
@@ -92,7 +89,7 @@ var Snake = (function() {
                         cx: previousPart.attr('cx'),
                         cy: previousPart.attr('cy')
                     };
-                    this.body.items[i].animate(posBody)
+                    this.body.items[i].stop().animate(posBody)
                 }
             }
         }

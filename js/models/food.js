@@ -4,10 +4,10 @@ var Food = (function() {
         this.y = pos_y;
         this.radius = radius;
         this.to_delete = false;
-        this.body = this.draw_body();
+        this.body = this.drawBody();
     }
 
-    Food.prototype.draw_body = function() {
+    Food.prototype.drawBody = function() {
         var body = stage.circle(this.x, this.y, this.radius).attr({
             fill : '#9d9d9d',
             stroke : '#5e5e5e',

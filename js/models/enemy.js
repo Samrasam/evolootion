@@ -2,10 +2,10 @@ var Enemy = (function() {
     function Enemy(radius) {
         this.radius = radius;
         this.padding = 14;
-        this.body = this.draw_body();
+        this.body = this.drawBody();
     }
 
-    Enemy.prototype.draw_body = function() {
+    Enemy.prototype.drawBody = function() {
         var body = stage.circle(this.x, this.y, this.radius).attr({
             fill : '#FF8000',
             stroke : '#99000',
