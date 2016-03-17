@@ -14,23 +14,14 @@ body{
 }
 
 #stage{
-	height: 740px;
+	height: 640px;
 	background-color: #ccddee;
 	position: relative;
 }
 
-#score{
-	position: absolute;
-	font-weight: bold;
-	bottom: 20px;
-	right: 20px;
-	color: rgb(191, 191, 191);
-}
-
-#timer{
+.hud{
 	position: absolute;
 	font-weight: bold;
 	top: 20px;
-	right: 20px;
-	color: rgb(191, 191, 191);
+	left: 20px;
 }
