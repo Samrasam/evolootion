@@ -102,7 +102,6 @@ Game = (function() {
                 $('#score').text(this.score);
                 this.snake.addBodyPart();
             }
-
         }
     };
 
